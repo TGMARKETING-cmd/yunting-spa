@@ -40,6 +40,9 @@
       border-radius: 9999px;
       box-shadow: 0 0 10px #FFD700a0;
       transition: background 0.3s ease, box-shadow 0.3s ease;
+      display:inline-block;
+      text-align:center;
+      text-decoration:none;
     }
     .btn-gold:hover {
       background: linear-gradient(90deg, #FFA500 0%, #FFD700 100%);
@@ -61,61 +64,33 @@
     .delay-400 { animation-delay: 0.4s; }
     .delay-500 { animation-delay: 0.5s; }
     .delay-600 { animation-delay: 0.6s; }
-    /* 横向滚动图集 */
-    .horizontal-scroll {
-      overflow-x: auto;
-      padding-bottom: 1rem;
-      scrollbar-width: thin;
-      scrollbar-color: #FFD700 transparent;
-    }
-    .horizontal-scroll::-webkit-scrollbar {
-      height: 8px;
-    }
-    .horizontal-scroll::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    .horizontal-scroll::-webkit-scrollbar-thumb {
-      background-color: #FFD700;
-      border-radius: 10px;
-    }
-    .image-strip {
-      display: flex;
-      gap: 1rem;
-      min-width: max-content;
-    }
-    .image-strip img {
-      border-radius: 1rem;
-      box-shadow: 0 4px 15px rgba(255,215,0,0.4);
-      width: 280px;
-      height: 180px;
-      object-fit: cover;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-    .image-strip img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 10px 35px rgba(255,215,0,0.75);
-    }
+    .delay-700 { animation-delay: 0.7s; }
+    .delay-800 { animation-delay: 0.8s; }
+    .delay-900 { animation-delay: 0.9s; }
   </style>
 </head>
 <body class="bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-x-hidden">
 
+<!-- 粒子背景 -->
 <div id="tsparticles" class="fixed inset-0 -z-20"></div>
 
+<!-- 顶部导航 -->
 <nav id="navbar" class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-4 glass">
   <h1 class="text-2xl font-serif font-bold text-yellow-400 tracking-widest">云庭 SPA 养生馆</h1>
-  <button id="open-modal" class="btn-gold">立即预约</button>
+  <a href="https://wa.me/60147597762" target="_blank" rel="noopener" class="btn-gold">立即预约</a>
 </nav>
 
+<!-- Banner -->
 <section class="relative h-screen w-full bg-cover bg-center flex flex-col justify-center items-center text-center px-6" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');">
-  <div class="absolute inset-0 bg-black/70"></div>
-  <div class="relative max-w-4xl">
+  <div class="absolute inset-0 bg-black/70 z-10 rounded-xl max-w-7xl mx-auto"></div>
+  <div class="relative z-20 max-w-4xl">
     <h2 class="text-6xl font-serif font-bold text-yellow-400 mb-6 leading-tight drop-shadow-lg">云庭 SPA 养生馆</h2>
     <p class="text-xl text-yellow-200 tracking-widest mb-12 drop-shadow-md">释放压力 · 舒缓身心 · 高端养生体验</p>
-    <button id="banner-appointment-btn" class="btn-gold text-xl px-12 py-4 drop-shadow-lg">立即预约</button>
+    <a href="https://wa.me/60147597762" target="_blank" rel="noopener" class="btn-gold text-xl px-12 py-4 drop-shadow-lg">立即预约</a>
   </div>
 </section>
 
+<!-- 关于我们 -->
 <section class="max-w-5xl mx-auto mt-24 p-10 glass fade-in-up delay-0">
   <h3 class="text-4xl font-serif font-semibold text-yellow-400 mb-8">关于我们</h3>
   <p class="text-gray-200 text-lg leading-relaxed max-w-3xl">
@@ -123,6 +98,7 @@
   </p>
 </section>
 
+<!-- 服务项目 -->
 <section class="max-w-7xl mx-auto mt-20 px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
   <div class="glass p-6 fade-in-up delay-0 cursor-pointer service-card">
     <h4 class="text-yellow-400 text-2xl mb-2 font-semibold">肩颈舒缓按摩（45分钟）</h4>
@@ -176,17 +152,13 @@
   </div>
 </section>
 
-<!-- 新增按摩图片横向滚动 -->
-<section class="max-w-7xl mx-auto mt-20 overflow-x-auto px-6">
+<!-- 底部环境照片展示 -->
+<section class="max-w-7xl mx-auto mt-24 px-8">
   <h3 class="text-yellow-400 text-4xl font-serif font-semibold mb-8 text-center">我们的环境</h3>
-  <div class="image-strip">
-    <img src="https://goku-nokimochi.hk/uploads/Goku_1_a517479631.jpg" alt="环境1" />
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWTTHCycr15wvNTfEEiFq-Oo5_8fPk4tqZ2A&s" alt="环境2" />
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_IO1XVod4SCxkHKy6jr-MmGxHK0XTTtmd8A&s" alt="环境3" />
-    <img src="https://duongsinhspa.vn/wp-content/uploads/2024/12/Massage-Body-Lung.png" alt="环境4" />
-    <img src="https://rimage.gnst.jp/livejapan.com/public/article/detail/a/20/00/a2000877/img/zh-cn/a2000877_parts_65cc7e83b1bb1.jpg?20240214173216&q=80&rw=686&rh=490" alt="环境5" />
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1jIvHEx2CfPxqqZd8KD9z3IEFzy42pEl2M747O8ioWg&s" alt="环境6" />
-    <img src="https://holibooking.com/wp-content/uploads/2024/06/Thai-Massage-Beauty-Center-1024x683.jpg" alt="环境7" />
+  <div class="flex justify-center gap-8 flex-wrap">
+    <img src="https://goku-nokimochi.hk/uploads/Goku_1_a517479631.jpg" alt="环境1" class="rounded-lg shadow-lg w-64 object-cover" />
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWTTHCycr15wvNTfEEiFq-Oo5_8fPk4tqZ2A&s" alt="环境2" class="rounded-lg shadow-lg w-64 object-cover" />
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_IO1XVod4SCxkHKy6jr-MmGxHK0XTTtmd8A&s" alt="环境3" class="rounded-lg shadow-lg w-64 object-cover" />
   </div>
 </section>
 
@@ -198,7 +170,7 @@
     <p><span class="font-semibold text-yellow-400">地址：</span>吉隆坡市中心SPA大厦3楼</p>
   </div>
   <div class="flex items-center gap-6 mt-6 md:mt-0">
-    <a href="https://wa.me/60123456789" target="_blank" rel="noopener" class="text-yellow-400 hover:text-yellow-300" aria-label="WhatsApp 联系">
+    <a href="https://wa.me/60147597762" target="_blank" rel="noopener" class="text-yellow-400 hover:text-yellow-300" aria-label="WhatsApp 联系">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48C18.44 1.42 15.656 0.412 12.888 0.586c-4.2 0.237-7.874 3.1-8.44 7.3-0.265 2.01 0.493 3.85 2.05 5.213L4 18l5.17-1.44c1.23 0.723 2.618 1.096 4.08 1.057 4.165-0.11 7.62-3.63 7.85-7.8 0.16-1.67-0.38-3.27-1.64-4.35zm-5.18 11.84c-0.31 0.22-1.824 1.35-2.11 1.48-0.285 0.135-0.85 0.18-1.28-0.27-0.426-0.44-1.61-1.88-2.08-2.48-0.464-0.6-0.97-1.72-0.96-2.53 0.01-0.82 0.61-0.88 0.84-0.89 0.23-0.01 0.55-0.01 0.84 0.51s1.1 1.82 1.18 1.96c0.08 0.14 0.12 0.31 0.04 0.5-0.08 0.19-0.13 0.31-0.26 0.48-0.13 0.17-0.275 0.33-0.393 0.49s-0.27 0.38-0.38 0.52c-0.1 0.13-0.215 0.28-0.273 0.33-0.07 0.07-0.16 0.09-0.265 0.07-0.122-0.02-0.71-0.28-1.36-0.9-0.65-0.62-1.17-1.4-1.53-2.01-0.357-0.605-0.65-1.374-0.72-1.64-0.065-0.27-0.136-0.43-0.063-0.64 0.072-0.2 1.02-1.49 1.5-1.94 0.49-0.44 1.27-0.9 1.5-0.9 0.23 0 0.91 0.1 1.1 0.11 0.19 0 0.45 0.08 0.83 0.34s.79.69 .79 1.68c0 .89-.45 1.66-.61 1.8z"/></svg>
     </a>
   </div>
@@ -237,6 +209,3 @@
     detectRetina: true
   });
 </script>
-
-</body>
-</html>
